@@ -21,9 +21,9 @@ IS_MSSQLDB = True
 
 ITEM_PIPELINES = {'egypttravelwarning.pipelines.MongoDBPipeline':300}
 
-MONGODB_SERVER = "localhost"
-MONGODB_PORT = 27017
-MONGODB_DB = "egypttravelwarnings"
+MONGODB_SERVER = "ds155651.mlab.com"
+MONGODB_PORT = 55651
+MONGODB_DB = "heroku_2c1ql71m"
 MONGODB_COLLECTION_TRAVELWARNINGS = "travelwarnings"
 MONGODB_USER = "website"
 MONGODB_PASSWORD = "Don'tLogin"
