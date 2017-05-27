@@ -1,0 +1,8 @@
+scrapy
+pymongo
+bs4
+cffi
+pandas
+numpy
+wheel
+dateparser
