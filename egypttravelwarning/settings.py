@@ -25,10 +25,6 @@ MONGODB_SERVER = "ds155651.mlab.com"
 MONGODB_PORT = 55651
 MONGODB_DB = "heroku_2c1ql71m"
 MONGODB_COLLECTION_TRAVELWARNINGS = "travelwarnings"
-MONGODB_USER = "website"
-MONGODB_PASSWORD = "Don'tLogin"
-
-
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'egypttravelwarning (+http://www.yourdomain.com)'
@@ -105,7 +101,7 @@ AUTOTHROTTLE_DEBUG = True
 
 # Enable and configure HTTP caching (disabled by default)
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
-HTTPCACHE_ENABLED = True
+HTTPCACHE_ENABLED = False
 HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = './httpcache'
 HTTPCACHE_IGNORE_HTTP_CODES = [502]

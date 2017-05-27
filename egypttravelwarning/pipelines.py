@@ -9,15 +9,23 @@ import json
 import pymongo
 from scrapy.conf import settings
 from scrapy.exceptions import DropItem
-
+import os
 from egypttravelwarning.items import TravelWarningItem
 
 
 class MongoDBPipeline(object):
 
     def __init__(self):
-        self.mongo_uri = "mongodb://%s:%s@%s:%s/%s" % (settings['MONGODB_USER'], settings['MONGODB_PASSWORD'], settings['MONGODB_SERVER'], settings['MONGODB_PORT'], settings['MONGODB_DB'])
-        
+        try:
+            if hasattr(settings, 'MONGODB_USER'):
+                self.mongo_uri = "mongodb://%s:%s@%s:%s/%s" % (
+                settings['MONGODB_USER'], settings['MONGODB_PASSWORD'], settings['MONGODB_SERVER'],
+                settings['MONGODB_PORT'], settings['MONGODB_DB'])
+            else:
+                self.mongo_uri = os.environ['EgyptMONGODB_URI']
+        except:
+            self.mongo_uri = os.environ['EgyptMONGODB_URI']
+
         self.mongo_db = settings['MONGODB_DB']
 
     def process_item(self, item, spider):
